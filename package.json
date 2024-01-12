@@ -10,7 +10,7 @@
     "release": "standard-version -a",
     "openshift": "nodeshift --dockerImage=registry.access.redhat.com/ubi8/nodejs-18",
     "openshift:enable:trace": "nodeshift --deploy.env NODE_OPTIONS='--require ./tracing.js' --dockerImage=registry.access.redhat.com/ubi8/nodejs-18",
-    "start": "node .",
+    "start": "node NODE_OPTIONS='--require ./tracing.js' .",
     "dev": "node . | npx pino-pretty",
     "dev:debug": "DEBUG=* node . "
   },
